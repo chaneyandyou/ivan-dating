@@ -1,0 +1,12 @@
+ .logoConatiner{
+     margin-top: 80px;
+     text-align: center;
+     margin-bottom: 50px;
+ }
+.dateTitle{
+    font-weight: 500;
+}
+
+ .logoConatiner h4{
+     font-weight: 400;
+ }
