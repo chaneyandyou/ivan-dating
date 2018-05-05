@@ -10,7 +10,7 @@ import {Redirect} from 'react-router-dom'
     {update}
 )
 
-export default class MaleInfo extends React.Component {
+export default class FemaleInfo extends React.Component {
     constructor() {
         super()
         this.state = {
@@ -20,7 +20,6 @@ export default class MaleInfo extends React.Component {
             age:''
         }
     }
-
     onChange(key, val) {
         this.setState({
             [key]: val
@@ -32,7 +31,7 @@ export default class MaleInfo extends React.Component {
         return (
             <div>
                 {redirect && redirect !== path ? <Redirect to={this.props.redirectTo}></Redirect> : null}
-                <NavBar mode="dark">Gent's Setting</NavBar>
+                <NavBar mode="dark">Lady's Setting</NavBar>
                 <AvatarSelector selectAvatar={(imgname) => this.setState({
                     avatar: imgname
                 })}>

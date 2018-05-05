@@ -17,6 +17,7 @@ import Register from "./container/register/register";
 //import MaleInfo from './container/register/maleinfo'
 import AuthRoute from "./component/authroute/authroute";
 import MaleInfo from "./container/maleinfo/maleinfo"
+import FemaleInfo from "./container/femaleinfo/femaleinfo"
 import './index.css'
 
 const store = createStore(reducers, compose(
@@ -33,6 +34,7 @@ ReactDom.render(
 				<AuthRoute></AuthRoute>
 				<Switch>
 					<Route path='/maleinfo' component={MaleInfo}></Route>
+					<Route path='/femaleinfo' component={FemaleInfo}></Route>
                     {/*<Route path='/maleinfo' component={MaleInfo}></Route>*/}
                     <Route path='/login' component={Login}></Route>
                     <Route path='/register' component={Register}></Route>

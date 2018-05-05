@@ -24,8 +24,22 @@ Router.post('/login', function (req, res) {
     })
 })
 
-Router.post('/register', function (req, res) {
+Router.post('/update', function (req, res) {
     console.log(req.body);
+    const userid = req.cookies.userid
+    if (!userid) {
+        return json.dumps({code: 1})
+    }
+    const body = req.body
+    User.findByIdAndUpdate(userid, body, function (err, doc) {
+        const data = Object.assign({}, {
+            user: doc.user,
+            type: doc.type
+        }, body)
+        return res.json({code: 0, data})
+    })
+})
+Router.post('/register', function (req, res) {
     const {user, pwd, type} = req.body
     User.findOne({user: user}, function (err, doc) {
         if (doc) {
@@ -51,11 +65,10 @@ Router.get('/info', function (req, res) {
             return res.json({code: 1, msg: 'server wrong'})
         }
         if (doc) {
-            return res.json({code: 0, data:doc},)
+            return res.json({code: 0, data: doc},)
         }
     })
     //用户有没有cookie
-
 })
 
 function md5PWD(pwd) {
