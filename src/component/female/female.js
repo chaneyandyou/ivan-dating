@@ -6,10 +6,10 @@ import {getUserList} from '../../redux/chatuser.redux'
 import UserCard from '../usercard/usercard'
 
 @connect(
-    state=>state.chatuser,
+    state => state.chatuser,
     {getUserList}
 )
-export default class Male extends React.Component {
+export default class Female extends React.Component {
     constructor() {
         super()
         this.state = {
@@ -18,9 +18,8 @@ export default class Male extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getUserList('female')
+        this.props.getUserList('male')
     }
-
     render() {
         return (
             <UserCard userlist={this.props.userlist}></UserCard>

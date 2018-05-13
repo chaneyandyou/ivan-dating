@@ -4,12 +4,8 @@ import {NavBar} from 'antd-mobile'
 import NavLinkBar from '../../component/navlink/navlink'
 import {Switch, Route} from 'react-router-dom'
 import Male from '../../component/male/male'
+import Female from '../../component/female/female'
 
-
-function Female() {
-    return <h2>Female page</h2>
-
-}
 
 function Msg() {
     return <h2>MSG page</h2>
