@@ -26,6 +26,7 @@ export default class FemaleInfo extends React.Component {
         })
     }
     render() {
+        console.log(this.props);
         const path = this.props.location.pathname
         const redirect = this.props.redirectTo
         return (

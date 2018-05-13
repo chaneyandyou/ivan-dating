@@ -18,15 +18,19 @@ import Register from "./container/register/register";
 import AuthRoute from "./component/authroute/authroute";
 import MaleInfo from "./container/maleinfo/maleinfo"
 import FemaleInfo from "./container/femaleinfo/femaleinfo"
+import Dashboard from "./component/dashboard/dashboard"
 import './index.css'
 
 const store = createStore(reducers, compose(
 	applyMiddleware(thunk),
 	window.devToolsExtension?window.devToolsExtension():f=>f
 ))
-function Boss(){
+/*function Boss(){
 	return <h2>Boss</h2>
 }
+function Dashboard(){
+    return <h2>Dashboard</h2>
+}*/
 ReactDom.render(
 	(<Provider store={store}>
 		<BrowserRouter>
@@ -38,6 +42,7 @@ ReactDom.render(
                     {/*<Route path='/maleinfo' component={MaleInfo}></Route>*/}
                     <Route path='/login' component={Login}></Route>
                     <Route path='/register' component={Register}></Route>
+                    <Route component={Dashboard}></Route>
 				</Switch>
 			</div>
 		</BrowserRouter>
